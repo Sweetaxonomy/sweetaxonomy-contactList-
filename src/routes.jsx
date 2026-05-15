@@ -1,13 +1,16 @@
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
 // Import necessary components and functions from react-router-dom.
 
-import {
-    createBrowserRouter,
-    createRoutesFromElements,
-    Route,
-} from "react-router-dom";
+
+
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
 import { AddContact } from "./pages/AddContact";
+import { EditContact } from "./pages/EditContact";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -18,10 +21,10 @@ export const router = createBrowserRouter(
     // Note: The child paths of the Layout element replace the Outlet component with the elements contained in the "element" attribute of these child paths.
 
       // Root Route: All navigation will start from here.
-      <Route path="/" element={<Layout />} errorElement={<h1>Not found!</h1>} >
+     <Route path="/" element={<Layout />} errorElement={<h1>Not found!</h1>}>
       <Route index element={<Home />} />
       <Route path="create-contact" element={<AddContact />} />
-      <Route path="edit-contact/:id" element={<AddContact />} />
+      <Route path="update-contact" element={<EditContact />} />
     </Route>
     )
 );

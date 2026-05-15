@@ -1,4 +1,4 @@
-export const initialStore=()=>{
+export const initialStore= () =>{
   return{
     message: null,
     todos: [
